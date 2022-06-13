@@ -17,3 +17,7 @@ axios.patch(url, data, config)
 // 用來發送探測請求，確認該地址採用的協定、要求的表頭
 axios.options(url, config) // 預先檢查發送的請求是否安全
 ```
+
+
+### ref
+https://www.realpythonproject.com/a-cheat-sheet-for-javascripts-axios/
