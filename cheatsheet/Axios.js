@@ -19,7 +19,7 @@ getData(url);
 
 //axios try catch
 try {
-  let res = await axios.get('/bad-call');
+  let res = await axios.get(url);
   let data = res.data;
 } catch (error) {
     console.log(error);    
