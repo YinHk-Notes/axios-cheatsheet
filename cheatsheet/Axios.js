@@ -124,12 +124,3 @@ Promise.all([getUserAccount(), getUserPermissions()])
  });
 
 
-
-              
-              
-              
-              
-              
-              
-              
-
