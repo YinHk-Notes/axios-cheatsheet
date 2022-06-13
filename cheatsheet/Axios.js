@@ -56,6 +56,14 @@ async function getUser() {
 }
 
 
+//eg:
+const params = {
+  answer: { toJSON: () => 42 },
+  time: moment('2016-06-01')
+};
+
+const res = await axios.get('https://httpbin.org/get', { params });
+res.data.args; // { answer: 42, time: "\"2016-06-01T04:00:00.000Z\"" }
 
 
 
