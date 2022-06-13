@@ -1,5 +1,5 @@
 const axios = require("axios");
-const url = "https://jexample.com";
+const url = "https://example.com";
 
 /* Making a get request */
 
@@ -10,7 +10,7 @@ axios.get(url)
   .catch((err) => console.log(err));
 
 //With async/await
-const getData = async (url) => {
+const getData = async () => {
   const res = await axios.get(url);
   const json = await res.data;
   console.log(json);
@@ -18,9 +18,48 @@ const getData = async (url) => {
 getData(url);
 
 //axios try catch
-try {
-  let res = await axios.get(url);
-  let data = res.data;
-} catch (error) {
-    console.log(error);    
+async function getData() {
+  try {
+    let res = await axios.get(url);
+    let data = await res.data;
+    return data;
+  } catch (error) {
+      console.log(error);    
+  }
 }
+
+//with params object
+//eg:
+async function getUser() {
+  try {
+    let res = await axios.get('/user', {
+       params: {
+         ID: 12345 
+       }
+    });
+    let data = await res.data;
+    return data;
+  } catch (error) {
+      console.log(error);    
+  }
+}
+
+//same as 
+async function getUser() {
+  try {
+    let res = await axios.get('/user?ID=12345');
+    let data = await res.data;
+    return data;
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+
+
+
+
+
+
+
+
