@@ -65,9 +65,71 @@ const params = {
 const res = await axios.get('https://httpbin.org/get', { params });
 res.data.args; // { answer: 42, time: "\"2016-06-01T04:00:00.000Z\"" }
 
+//handling header
+const getData = async (url, headers) => {
+  try {
+    let res = await axios.get(url, {
+      headers: headers,
+    });
+    let data = await res.data;
+    return data;
+  } catch (err) {
+    console.log(err);
+  }
+};
 
 
 
+/* Post request */
+
+const reqBody = {...}
+async function postData(url, data) => {
+  try {
+    let res = await axios.post(url, {
+      ...reqBody,
+    });
+    let data = await res.data;
+    return data;
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+// example
+axios.post('/user', {
+    firstName: 'Fred',
+    lastName: 'Flintstone'
+  })
+  .then(function (response) {
+    console.log(response);
+  })
+  .catch(function (error) {
+    console.log(error);
+ });
 
 
+//Performing multiple concurrent requests
+function getUserAccount() {
+  return axios.get('/user/12345');
+}
+
+function getUserPermissions() {
+  return axios.get('/user/12345/permissions');
+}
+
+Promise.all([getUserAccount(), getUserPermissions()])
+  .then(function (results) {
+    const acct = results[0];
+    const perm = results[1];
+ });
+
+
+
+              
+              
+              
+              
+              
+              
+              
 
