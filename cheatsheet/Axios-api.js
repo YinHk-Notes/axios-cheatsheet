@@ -12,8 +12,8 @@ axios({
 });
 
 axios.get(url, config)
-axios.post(url, config)
-axios.delete(url, config)
+axios.post(url, data, config)
+axios.delete(url, data, config)
 axios.put(url, config)
 
 
