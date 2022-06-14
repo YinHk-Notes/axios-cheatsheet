@@ -108,6 +108,25 @@ axios.post('/user', {
  });
 
 
+// with res parms in axios post request
+axios.post('/user', {
+    firstName: 'Fred',
+    lastName: 'Flintstone'
+   }, {
+    params: {
+        mail,
+        firstname 
+    }
+  })
+  .then(function (response) {
+    console.log(response);
+  })
+  .catch(function (error) {
+    console.log(error);
+ });
+
+
+
 //Performing multiple concurrent requests
 function getUserAccount() {
   return axios.get('/user/12345');
