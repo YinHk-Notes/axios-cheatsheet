@@ -8,7 +8,7 @@ axios.request(config) // 與上相同功能
 axios.get(url, config)
 axios.delete(url, config)
 // 功能與 GET 相同，但無 response body
-xios.head(url, config) 
+axios.head(url, config) 
   
 axios.post(url, data, config)
 axios.put(url, data, config)
