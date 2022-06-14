@@ -83,7 +83,7 @@ const getData = async (url, headers) => {
 /* Post request */
 
 const reqBody = {...}
-async function postData(url, data) => {
+async function postData(url) => {
   try {
     let res = await axios.post(url, {
       ...reqBody,
