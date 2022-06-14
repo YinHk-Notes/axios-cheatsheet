@@ -62,7 +62,7 @@ const params = {
   time: moment('2016-06-01')
 };
 
-const res = await axios.get('https://httpbin.org/get', { params });
+const res = await axios.get('https://httpbin.org/get', { params: params });
 res.data.args; // { answer: 42, time: "\"2016-06-01T04:00:00.000Z\"" }
 
 //handling header
