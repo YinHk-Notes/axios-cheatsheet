@@ -30,9 +30,27 @@ async function request = () => {
 // call request() in some where
 
 
-
 //using axios in useEffect
 useEffect(() => { request() }, [])                     //axios call after didmount once only
 useEffect(() => { request() }, [...dependecies])       //axios call once any dependency updated
+
+
+//handle concurrence api calls
+//by using Promise.all()
+const list = [...];
+
+async function archiveCalls() {
+   try {
+      let res = await Promise.all(
+        list.map((item) => axios.post(url,{
+            is_archived: true
+        }))
+      );
+      let data = await res.data;
+      //logic of handling received data here
+    } catch (error) {
+      //logic of handling error here
+    }
+}
 
 
