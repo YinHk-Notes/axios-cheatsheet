@@ -42,9 +42,7 @@ const list = [...];
 async function archiveCalls() {
    try {
       let res = await Promise.all(
-        list.map((item) => axios.post(url,{
-            is_archived: true
-        }))
+        list.map((item) => axios.post(url,{ ...reqBody }, ))
       );
       let data = await res.data;
       //logic of handling received data here
