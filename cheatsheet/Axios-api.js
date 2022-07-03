@@ -11,6 +11,9 @@ axios({
   }
 });
 
+
+/* axios get,post,delete,put */
+
 axios.get(url, config)
 axios.post(url, data, config)
 axios.delete(url, data, config)
