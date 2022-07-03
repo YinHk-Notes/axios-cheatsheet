@@ -12,12 +12,18 @@ axios({
 });
 
 
+/* axios.request */
+
+axios.request(config)
+
+
 /* axios get,post,delete,put */
 
 axios.get(url, config)
+axios.head(url, config)
 axios.post(url, data, config)
-axios.delete(url, data, config)
-axios.put(url, config)
+axios.put(url, data, config)
+axios.delete(url, config)
 
 
 /* request config */
