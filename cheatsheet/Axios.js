@@ -27,6 +27,7 @@ async function getData() {
       console.log(error);    
   }
 }
+getData();
 
 //with params object
 //eg:
@@ -43,6 +44,7 @@ async function getUser() {
       console.log(error);    
   }
 }
+getUser();
 
 //same as 
 async function getUser() {
@@ -54,7 +56,7 @@ async function getUser() {
     console.error(error);
   }
 }
-
+getUser();
 
 //eg:
 const params = {
