@@ -15,7 +15,7 @@ const getData = async () => {
   const json = await res.data;
   console.log(json);
 };
-getData(url);
+getData();
 
 //axios try catch
 async function getData() {
