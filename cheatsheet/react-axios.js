@@ -15,8 +15,19 @@ const request = () => {
         })();    //invoke async function immediately after decalare
 };
 
-//or use async directly
-async function request = () => {
+//or use async await directly
+async function request() {
+    try {
+      const res = await axios.get(URL);
+      const data = await res.data;
+      //logic of handling received data here
+    } catch (err) {
+      //logic of handling error here
+    }
+};
+
+//or use async await directly in arrow function 
+const request = async () => {
     try {
       const res = await axios.get(URL);
       const data = await res.data;
